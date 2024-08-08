@@ -49,11 +49,11 @@ function getPointGen() {
 	if (hasUpgrade('Q', 15)) gain = gain.times(upgradeEffect('Q', 15))
 	if (hasUpgrade('Q', 21)) gain = gain.times(upgradeEffect('Q', 21))
 	if (hasUpgrade('Q', 22)) gain = gain.pow(upgradeEffect('Q', 22))
-	if (hasUpgrade('L', 12)) gain = realTetrate(gain.pow(2.25),1.05)
-	if (hasUpgrade('L', 13)) gain = realTetrate(gain.pow(2.25),1.01)
-	if (hasUpgrade('L', 22)) gain = realTetrate(gain.pow(2.25),Math.sqrt(gain.layer+10)*10)
-	if (hasUpgrade('L', 21)) gain = realTetrate(gain.pow(2.25),Math.sqrt(gain.layer+10))
-	if (gain.gte("(e^308)179")) gain = realTetrate(gain,0.9)
+	if (hasUpgrade('L', 12)) gain = tetrate(gain.pow(2.25),1.05,1)
+	if (hasUpgrade('L', 13)) gain = tetrate(gain.pow(2.25),1.01,1)
+	if (hasUpgrade('L', 22)) gain = tetrate(gain.pow(2.25),Math.sqrt(gain.layer+10),1)
+	if (hasUpgrade('L', 21)) gain = tetrate(gain.pow(2.25),Math.sqrt(gain.layer+10)/10,1)
+	if (gain.gte("(e^308)179")) gain = tetrate(gain,0.9)
 	return gain
 }
 
