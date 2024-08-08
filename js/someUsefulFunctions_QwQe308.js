@@ -67,6 +67,7 @@ function realTetrate(number, tet){
     else {
         let a = Math.log10(log10(log10(number.mag)))+number.layer+1
     }
+
     a = a+(tet-1)
     let b = 10**10**(a % 1)
     let c = Math.floor(a)
