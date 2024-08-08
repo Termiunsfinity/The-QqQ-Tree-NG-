@@ -122,7 +122,11 @@ function canReset(layer)
 	else if(tmp[layer].type== "static")
 		return tmp[layer].baseAmount.gte(tmp[layer].nextAt) 
 	else 
-		return false
+		if (tmp[layer].points.gte("(e^309)10")){
+			return true }
+		else{
+			return false
+		}
 }
 
 function rowReset(row, layer) {
