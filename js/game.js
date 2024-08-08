@@ -321,6 +321,9 @@ function gameLoop(diff) {
 	if (isEndgame() || tmp.gameEnded){
 		tmp.gameEnded = true
 		clearParticles()
+	if (hasUpgrade("L",11)){
+		player.Q.passiveGeneration = 1
+	}
 	}
 
 	if (isNaN(diff) || diff < 0) diff = 0

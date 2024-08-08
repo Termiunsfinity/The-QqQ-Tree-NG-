@@ -59,3 +59,16 @@ function quickSUP(str){
 function quickColor(str,color){
     return `<text style='color:${color}'>${str}</text>`
 }
+
+//this one i make itself hahaha
+function realTetrate(number, tet){
+    if (number.mag < 1e10){
+        let a = Math.log10(log10(number.mag))+number.layer }
+    else {
+        let a = Math.log10(log10(log10(number.mag)))+number.layer+1
+    }
+    a = a+(tet-1)
+    let b = 10**10**(a % 1)
+    let c = Math.floor(a)
+    return Decimal("e^("+c+")"+b)
+}

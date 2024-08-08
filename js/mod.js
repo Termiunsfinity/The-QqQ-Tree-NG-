@@ -14,13 +14,13 @@ let modInfo = {
 // Set your version in num and name
 let VERSION = {
 	num: "QqQe308",
-	name: "The Full Game",
+	name: "Arcaea is SB",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
 	<h3>QqQe308</h3><br>
 		- Added the whole game.<br>
-		- Endgame: e1.79e308 QqQe308.`
+		- Endgame: (e^114,514)1,919,810 QqQe308.`
 
 let winText = `恭喜！你通关了！`
 
@@ -49,7 +49,10 @@ function getPointGen() {
 	if (hasUpgrade('Q', 15)) gain = gain.times(upgradeEffect('Q', 15))
 	if (hasUpgrade('Q', 21)) gain = gain.times(upgradeEffect('Q', 21))
 	if (hasUpgrade('Q', 22)) gain = gain.pow(upgradeEffect('Q', 22))
-		return gain
+	if (hasUpgrade('L', 12)) gain = gain.realTetrate(gain.pow(2.25),1.05)
+	if (hasUpgrade('L', 13)) gain = gain.realTetrate(gain.pow(2.25),1.01)
+	if (gain.gte("(e^308)179")) gain = gain.realTetrate(gain,0.9)
+	return gain
 }
 
 // You can add non-layer related variables that should to into "player" and be saved here, along with default values
@@ -62,7 +65,7 @@ var displayThings = [
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.points.gte(new Decimal("e1.79e308"))
+	return player.points.gte(new Decimal("(e^114514)1919810"))
 }
 
 

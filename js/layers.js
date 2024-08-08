@@ -28,7 +28,7 @@ addLayer("Q", {
     upgrades: {
         11: {
             name: "作者的留言",
-            description: "作者留言：1分钟内通不了关我让你随便超",
+            description: "作者留言：114514分钟内通不了关我让你随便超",
             cost: new Decimal (-1),
         },
         12: {
@@ -88,6 +88,53 @@ addLayer("Q", {
             description: "你真正到达了游戏的尽头！",
             cost: new Decimal ("(e^308)1.79"),
             unlocked() {return player.Q.points.gte(new Decimal ("e1.79e308"))}
+        },
+    },
+})
+
+addLayer("L", {
+    name: "QqQe616", // This is optional, only used in a few places, If absent it just uses the layer id.
+    symbol: "L", // This appears on the layer's node. Default is the id with the first letter capitalized
+    position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
+    startData() { return {
+        unlocked: true,
+		points: new Decimal(0),
+    }},
+    color: "#1f1e33",
+    requires: new Decimal("(e^308)1.79"), // Can be a function that takes requirement increases into account
+    resource: "Lowrio", // Name of prestige currency
+    baseResource: "QqQeInfinity", // Name of resource prestige is based on
+    baseAmount() {return player.Q}, // Get the current amount of baseResource
+    type: "custom", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    exponent: 0.5, // Prestige currency exponent
+    getResetGain() {return realTetrate(player.Q,1/308)},
+    gainMult() { // Calculate the multiplier for main currency from bonuses
+        mult = new Decimal(1)
+        return mult
+    },
+    gainExp() { // Calculate the exponent on main currency from bonuses
+        return new Decimal(1)
+    },
+    row: 1, // Row the layer is in on the tree (0 is the first row)
+    hotkeys: [
+        {key: "l", description: "l: 进行lowrio重置", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+    ],
+    layerShown(){return true},
+    upgrades: {
+        11: {
+            name: "arcaea sb",
+            description: "gain 100% of Q/s",
+            cost: new Decimal (1),
+        },
+        12: {
+            name: "arcaea more sb",
+            description: "qwqe308 ^^1.05",
+            cost: new Decimal (2),
+        },
+        13: {
+            name: "308*2 = 616",
+            description: "qwqe308 ^^1.025",
+            cost: new Decimal (10),
         },
     },
 })
