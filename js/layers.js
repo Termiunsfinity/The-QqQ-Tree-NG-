@@ -85,7 +85,7 @@ addLayer("Q", {
         },
         23: {
             name: "",
-            description: "你真正到达了游戏的尽头！",
+            description: "你真正到达了游戏的尽头...?",
             cost: new Decimal ("(e^308)1.79"),
             unlocked() {return player.Q.points.gte(new Decimal ("e1.79e308"))}
         },
@@ -114,6 +114,9 @@ addLayer("L", {
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
+    },
+    getNextAt(){
+        return "操 lowrio many times over again"
     },
     row: 1, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
