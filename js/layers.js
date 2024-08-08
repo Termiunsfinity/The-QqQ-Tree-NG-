@@ -104,10 +104,10 @@ addLayer("L", {
     requires: new Decimal("(e^308)1.79"), // Can be a function that takes requirement increases into account
     resource: "Lowrio", // Name of prestige currency
     baseResource: "QqQeInfinity", // Name of resource prestige is based on
-    baseAmount() {return player.Q}, // Get the current amount of baseResource
+    baseAmount() {return player.Q.points}, // Get the current amount of baseResource
     type: "custom", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.5, // Prestige currency exponent
-    getResetGain() {return realTetrate(player.Q,1/308)},
+    getResetGain() {return realTetrate(player.Q.points,1/308)},
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -135,6 +135,16 @@ addLayer("L", {
             name: "308*2 = 616",
             description: "qwqe308 ^^1.025",
             cost: new Decimal (10),
+        },
+        21: {
+            name: "ez",
+            description: "qwqe308 ^^sqrt(slog(qwqe308))",
+            cost: new Decimal (10),
+        },
+        22: {
+            name: "ez x2",
+            description: "L21 x10",
+            cost: new Decimal ("(e^10)10"),
         },
     },
 })
