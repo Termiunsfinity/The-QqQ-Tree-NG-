@@ -126,27 +126,27 @@ addLayer("L", {
         11: {
             name: "arcaea sb",
             description: "gain 100% of Q/s",
-            cost: new Decimal (1),
+            cost: new Decimal ("100"),
         },
         12: {
             name: "arcaea more sb",
             description: "qwqe308 ^^1.05",
-            cost: new Decimal (2),
+            cost: new Decimal ("1e120"),
         },
         13: {
             name: "308*2 = 616",
             description: "qwqe308 ^^1.025",
-            cost: new Decimal (10),
+            cost: new Decimal ("ee200"),
         },
         21: {
             name: "ez",
             description: "qwqe308 ^^sqrt(slog(qwqe308))",
-            cost: new Decimal (10),
+            cost: new Decimal ("eee10"),
         },
         22: {
             name: "ez x2",
             description: "L21 x10",
-            cost: new Decimal ("(e^10)10"),
+            cost: new Decimal ("(e^100)10"),
         },
     },
 })
